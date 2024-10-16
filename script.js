@@ -58,7 +58,7 @@ function populateCarousel(carouselId, videos) {
 
 // Cargar archivo M3U y generar los carruseles
 async function loadM3U() {
-    const m3uUrl = 'URL_DE_TU_ARCHIVO_M3U'; // Reemplaza con la URL real
+    const m3uUrl = 'https://raw.githubusercontent.com/pirrimori/acid/main/byaces.m3u'; // Reemplaza con la URL real
     const m3uData = await fetchM3U(m3uUrl);
     const videos = processM3U(m3uData);
 
