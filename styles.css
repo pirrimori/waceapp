@@ -1,0 +1,49 @@
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    width: 90%;
+    scroll-behavior: smooth;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    flex: 0 0 auto;
+    width: 300px; /* Ancho de las tarjetas */
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: auto; /* Esto mantendrá la proporción 16:9 */
+    aspect-ratio: 16 / 9; /* Asegura relación 16:9 */
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-title {
+    padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    .card {
+        width: 100%; /* Ajusta el ancho para pantallas pequeñas */
+    }
+}
