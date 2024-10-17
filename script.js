@@ -141,17 +141,19 @@ function createCarousel(items, title) {
 
 // Función para reproducir el video
 function playVideo(url) {
-    if (url) {
-        window.open(url, '_blank'); // Abrir en una nueva pestaña
-    } else {
-        alert("No hay reproductor disponible para este video."); // Mensaje de error
-    }
+    try {
+			// Intentar abrir el video en un reproductor
+			window.open(url, '_blank');
+		} catch (error) {
+			// Mostrar un mensaje de error si falla
+			alert('No se pudo abrir el reproductor de video.');
+	}
 }
 
 // Evento para manejar el clic en el botón de carga
 document.getElementById('load-button').addEventListener('click', async () => {
     const urlInput = document.getElementById('url-input');
-    const url = `https://cors-anywhere.herokuapp.com/${urlInput.value.trim()}`;
+    const url = urlInput.value.trim();
     
     if (!url) {
         alert("Por favor, introduce una URL válida.");
