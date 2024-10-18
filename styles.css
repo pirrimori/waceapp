@@ -13,60 +13,39 @@ h1 {
     margin: 20px 0;
 }
 
-/* Contenedor centrado para el input y botón */
-.input-container {
+.carousel {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+    overflow-x: auto;
+    padding: 10px 10px;
+    scroll-behavior: smooth;
 }
 
-.input-container input,
-.input-container button {
+.carousel::-webkit-scrollbar {
+    display: above;
+}
+
+.card {
+    flex: 0 0 auto;
+    width: 250px; /* Ancho de las tarjetas */
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    overflow: hidden;
+}
+
+.card img {
     width: 100%;
-    max-width: 400px; /* Máximo ancho del input y botón */
-    margin: 5px;
+    height: auto; /* Esto mantendrá la proporción 16:9 */
+    aspect-ratio: 16 / 9; /* Asegura relación 16:9 */
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-title {
     padding: 10px;
-    font-size: 16px;
-}
-
-#load-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#load-button:hover {
-    background-color: #218838;
-}
-
-/* Botón cuadrado para mostrar el log de errores */
-#error-log-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 40px;
-    height: 40px;
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#error-log-button::before {
-    content: "⚠";  /* Símbolo de advertencia */
-}
-
-#error-log-button:hover {
-    background-color: #c82333;
 }
 
 /* Estilos para el modal de errores */
@@ -89,51 +68,6 @@ h1 {
     cursor: pointer;
     font-size: 20px;
 }
-
-#carousel-container {
-    padding: 10px; /* Espacio para el contenedor de carruseles */
-}
-
-/* Estilos del carrusel y las tarjetas */
-.carousel {
-    display: flex;
-    overflow-x: auto; /* Permitir desplazamiento horizontal */
-    padding-bottom: 10px; /* Espacio en la parte inferior del carrusel */
-}
-
-.carousel::-webkit-scrollbar {
-    display: above; /* Ocultar scrollbar en Webkit */
-}
-
-/* Estilos de las tarjetas */
-.card {
-    flex: 0 0 auto; /* No permitir que las tarjetas se expandan */
-    margin-right: 10px; /* Espacio entre tarjetas */
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    width: calc(16 * 100px / 9); /* Ancho basado en la relación 16:9 */
-    height: 112.5px; /* Altura correspondiente a 16:9 */
-    overflow: hidden; /* Ocultar contenido desbordante */
-}
-
-.card img {
-    width: 100%; /* Ajustar imagen al ancho de la tarjeta */
-    height: 70%; /* Ajustar imagen a un 70% de la altura de la tarjeta */
-    object-fit: cover; /* Mantener relación de aspecto de la imagen */
-    border-radius: 10px 10px 0 0; /* Bordes redondeados solo en la parte superior */
-}
-
-/* Estilo para el texto dentro de la tarjeta */
-.card p {
-    margin: 0; /* Eliminar margen */
-    line-height: 1.2; /* Espaciado entre líneas */
-    font-size: 14px; /* Ajustar tamaño de fuente */
-    color: #333; /* Color del texto */
-    text-align: center; /* Centrar texto */
-}
-
 
 /* Estilos para el modal de carga */
 .hidden {
@@ -158,4 +92,14 @@ h1 {
     padding: 20px;
     border-radius: 5px;
     text-align: center;
+}
+
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    .card {
+        width: 100%; /* Ajusta el ancho para pantallas pequeñas */
+    }
 }
