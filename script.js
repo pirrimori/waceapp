@@ -3,7 +3,8 @@ let groups = {};   // Almacenar los grupos (group-title) y sus EXTINF
 
 // Función para cargar el archivo M3U desde una URL
 function fetchM3UData(url) {
-    return fetch(url)
+const proxyUrl = 'https://corsproxy.io/?';
+    return fetch(proxuUrl + url)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`No se pudo cargar el archivo M3U desde la URL: ${url}`);
