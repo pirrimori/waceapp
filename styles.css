@@ -24,6 +24,11 @@ h1 {
     display: above;
 }
 
+.carousel {
+    -ms-overflow-style: above;
+    scrollbar-width: above;
+}
+
 .card {
     flex: 0 0 auto;
     width: 250px; /* Ancho de las tarjetas */
@@ -33,6 +38,10 @@ h1 {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: center;
     overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Efecto de ampliación al pasar el mouse */
 }
 
 .card img {
