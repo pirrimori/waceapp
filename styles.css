@@ -40,10 +40,6 @@ h1 {
     overflow: hidden;
 }
 
-.card:hover {
-    transform: scale(1.05); /* Efecto de ampliación al pasar el mouse */
-}
-
 .card img {
     width: 100%;
     height: auto; /* Esto mantendrá la proporción 16:9 */
@@ -55,6 +51,10 @@ h1 {
 
 .card-title {
     padding: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Efecto de ampliación al pasar el mouse */
 }
 
 /* Estilos para el modal de errores */
